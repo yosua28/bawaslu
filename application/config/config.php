@@ -523,6 +523,7 @@ $config['rewrite_short_tags'] = FALSE;
 $config['proxy_ips'] = '';
 
 $config['admin_layout'] = 'admin/layout/body';
+$config['front_layout'] = 'layout/body';
 $config['public_layout'] = 'layout/body';
 $config['login_layout'] = 'login_layout/body';
 $config['path_file_pendukung'] = 'assets/uploads/file_pendukung/';

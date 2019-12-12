@@ -118,6 +118,20 @@
 
   <!-- Page Javascript -->
   <script type="text/javascript">
+    console.log("ddd");
+    $(document).ready(function(){
+      $(".delete_data").click(function(){
+        var link = $(this).data("link");
+        if (confirm("Apakah anda yakin menghapus data ini?")){
+          // console.log(link);
+          window.location.href = link;
+        }
+        return false;
+      });
+    });
+  </script>
+
+  <script type="text/javascript">
   jQuery(document).ready(function() {
     Core.init();
     // Demo.init();

@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+date_default_timezone_set('Asia/Jakarta');
 
 class Konten_model extends CI_Model {
 	
@@ -11,7 +12,7 @@ class Konten_model extends CI_Model {
 	
 	//Listing
 	public function listing($kategori) {
-		$this->db->select('konten.*, konten.created_date as tgl_pembuatan,  konten.is_active as status,
+		$this->db->select('konten.*, konten.id as id_konten, konten.created_date as tgl_pembuatan,  konten.is_active as status,
 			kategori.kategori, kategori.is_upload, 
 			user.*');
 		$this->db->from('konten');
@@ -39,7 +40,7 @@ class Konten_model extends CI_Model {
 
 		// var_dump($data);exit;
 
-		$this->db->insert('konten',$data);
+		return $this->db->insert('konten',$data);
 	}
 
 	// detail perberita
@@ -63,10 +64,10 @@ class Konten_model extends CI_Model {
 		$data['updated_date'] = date('Y-m-d H:i:s');
 		$data['updated_by'] = '1';
 		$data['is_delete'] = '1';
-		var_dump("expression");exit;
 
 		$this->db->where('id', $id);
 		$this->db->update('konten', $data);
+		return true;
 	}
 
 	public function formatLink($judul) {

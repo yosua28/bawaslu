@@ -24,7 +24,6 @@ class Konten extends CI_Controller {
 			);
 			$this->load->view($this->config->item('admin_layout'), $data); 
 		}
-
 	}
 
 	public function add($kategori)
@@ -35,7 +34,7 @@ class Konten extends CI_Controller {
 			$valid = array(
 				'judul' => '',
 				'file_pendukung' => '',
-				'thumnail' => ''
+				'foto_thumbnail' => ''
 			);
 			//Data
 			$data_konten = array(
@@ -47,6 +46,34 @@ class Konten extends CI_Controller {
 
 			$post = $this->input;
 			if($post->post()) {
+
+				if(!empty($_FILES['file_pendukung']['name'])) {
+					$allowed_file_pendukung = array(
+				        "pdf", "PDF"
+				    );
+				    $file_extension = pathinfo($_FILES["file_pendukung"]["name"], PATHINFO_EXTENSION);
+				    
+				    if (!in_array($file_extension, $allowed_file_pendukung)) {
+				        $valid['file_pendukung'] = "File harus berformat (PDF)";
+				    } else if ($_FILES["file_pendukung"]["size"] > 5000000) {
+				        $valid['file_pendukung'] = "FIle tidak boleh lebih dari 5MB";
+				    }
+				}
+
+				if(!empty($_FILES['foto_thumbnail']['name'])) {
+					$allowed_foto_thumbnail = array(
+				        "jpg", "JPG", "png", "PNG", "jpeg", "JPEG"
+				    );
+				    $file_extension = pathinfo($_FILES["foto_thumbnail"]["name"], PATHINFO_EXTENSION);
+				    
+				    if (!in_array($file_extension, $allowed_foto_thumbnail)) {
+				        $valid['foto_thumbnail'] = "File harus berformat (JPG/PNG/JPEG)";
+				    } else if ($_FILES["foto_thumbnail"]["size"] > 2000000) {
+				        $valid['foto_thumbnail'] = "FIle tidak boleh lebih dari 2MB";
+				    }
+				}
+
+
 				if(empty($post->post('judul'))){
 					$valid['judul'] = 'Judul tidak boleh kosong';
 				}
@@ -58,13 +85,22 @@ class Konten extends CI_Controller {
 					'is_active' => $post->post('is_active'),
 				);
 
-				if(empty($valid['judul']) && empty($valid['kategori'])) {
+				if(empty($valid['judul']) && empty($valid['kategori']) && empty($valid['file_pendukung']) && empty($valid['foto_thumbnail'])) {
+					if(!empty($_FILES['file_pendukung']['name'])) {
+						$target_file = '/assets/uploads/file_pendukung/'.strtotime(date('Y-m-d H:i:s')).'_'.$_FILES['file_pendukung']['name'];
+						move_uploaded_file( $_FILES['file_pendukung']['tmp_name'], $_SERVER['DOCUMENT_ROOT'].$target_file);
+						$data_konten['file_pendukung'] = $target_file;
+					}
+					if(!empty($_FILES['foto_thumbnail']['name'])) {
+						$target_foto_thumbnail = '/assets/uploads/foto_thumbnail/'.strtotime(date('Y-m-d H:i:s')).'_'.$_FILES['foto_thumbnail']['name'];
+						move_uploaded_file( $_FILES['foto_thumbnail']['tmp_name'], $_SERVER['DOCUMENT_ROOT'].$target_foto_thumbnail);
+						$data_konten['foto_thumbnail'] = $target_foto_thumbnail;
+					}
 					$save = $this->konten_model->simpan($data_konten);
 					if($save) {
-						redirect(base_url().'dashboard');
+						redirect(base_url().'konten/'.$kategori);
 					}
 				}
-
 			}
 
 			$konten = $this->konten_model->listing($kategori);
@@ -80,8 +116,11 @@ class Konten extends CI_Controller {
 		}
 	}
 
-	public function delete($id) {
-		var_dump("ddd");exit;
+	public function delete($id, $kategori) {
+		// var_dump("ddd");exit;
 		$delete = $this->konten_model->delete($id);
+		if($delete) {
+			redirect(base_url().'konten/'.$kategori);
+		}
 	}
 }

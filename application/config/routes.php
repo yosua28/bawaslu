@@ -63,5 +63,5 @@ $route['logout'] = 'login/logout';
 $route['konten/(:any)'] = 'admin/konten/index/$1';
 $route['add/konten/(:any)'] = 'admin/konten/add/$1';
 $route['save/konten/(:any)'] = 'admin/konten/save/$1';
-$route['konten/delete/(:any)'] = 'admin/konten/delete/$1';
+$route['konten/delete/(:any)/(:any)'] = 'admin/konten/delete/$1/$2';
 $route['update/konten/(:any)/(:any)'] = 'admin/konten/update/$1/$2';

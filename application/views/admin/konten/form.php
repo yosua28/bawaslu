@@ -42,38 +42,40 @@
                         <h4>Konten</h4> 
                         <div class="section">
                           <label class="field state-error">
-                            <textarea value="<?php echo $data['isi_konten']; ?>" id="ckeditor1" name="isi_konten" rows="12"></textarea>
+                            <textarea id="ckeditor1" name="isi_konten" rows="12">
+                              <?php echo $data['isi_konten']; ?>
+                            </textarea>
                           </label>
                         </div>
                       </div>
                       <div class="col-md-12">
-                        <h4>Upload Thumnail <label style="color: red; font-weight: bold;"> - (format : JPG, JPEG, PNG)</label></h4>
+                        <h4>Upload Thumbnail <label style="color: red; font-weight: bold;"> - (format : JPG, JPEG, PNG, Max : 2MB)</label></h4>
                         <div class="section">
-                          <label class="field prepend-icon append-button file <?php echo !empty($valid['thumnail']) ? 'state-error' : ''; ?>">
+                          <label class="field prepend-icon append-button file <?php echo !empty($valid['foto_thumbnail']) ? 'state-error' : ''; ?>">
                             <span class="button btn-primary">Choose File</span>
-                            <input type="file" class="gui-file" name="thumnail" id="file1" onchange="document.getElementById('uploader1').value = this.value;">
-                            <input type="text" class="gui-input" id="uploader1" placeholder="Pilih Thumnail">
+                            <input type="file" class="gui-file" name="foto_thumbnail" id="file1" onchange="document.getElementById('uploader1').value = this.value;">
+                            <input type="text" class="gui-input" id="uploader1" placeholder="Pilih Thumbnail">
                             <label class="field-icon">
                               <i class="fa fa-upload"></i>
                             </label>
                           </label>
-                          <?php if (!empty($valid['thumnail'])) : ?>
-                            <em for="applicant_age" class="state-error"><?php echo $valid['thumnail']; ?></em>
+                          <?php if (!empty($valid['foto_thumbnail'])) : ?>
+                            <em for="applicant_age" class="state-error"><?php echo $valid['foto_thumbnail']; ?></em>
                           <?php endif; ?>
                         </div>
                       </div>
                       <div class="col-md-12">
-                        <h4>File Pendukung <label style="color: red; font-weight: bold;"> - File dapat di unduh oleh publik (format : PDF)</label></h4>
+                        <h4>File Pendukung <label style="color: red; font-weight: bold;"> - File dapat di unduh oleh publik (format : PDF, Max : 5MB)</label></h4>
                         <div class="section">
                           <label class="field prepend-icon append-button file <?php echo !empty($valid['file_pendukung']) ? 'state-error' : ''; ?>">
                             <span class="button btn-primary">Choose File</span>
-                            <input type="file" class="gui-file" name="file_pendukung" id="file1" onchange="document.getElementById('uploader1').value = this.value;">
-                            <input type="text" class="gui-input" id="uploader1" placeholder="Pilih File Pendukung">
+                            <input type="file" class="gui-file" name="file_pendukung" id="file1" onchange="document.getElementById('uploader2').value = this.value;">
+                            <input type="text" class="gui-input" id="uploader2" placeholder="Pilih File Pendukung">
                             <label class="field-icon">
                               <i class="fa fa-upload"></i>
                             </label>
                           </label>
-                          <?php if (!empty($valid['thumnail'])) : ?>
+                          <?php if (!empty($valid['file_pendukung'])) : ?>
                             <em for="applicant_age" class="state-error"><?php echo $valid['file_pendukung']; ?></em>
                           <?php endif; ?>
                         </div>

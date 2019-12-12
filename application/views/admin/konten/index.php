@@ -48,7 +48,7 @@
                       <td><?php echo $value->dibaca.' kali'; ?></td>
                       <td>
                         <button onclick="window.location.href = '/update/konten/<?php echo $kategori;?>/<?php echo $value->link;?>';" type="button" class="btn btn-sm btn-success btn-block">Update</button>
-                        <button href="<?php echo base_url('konten/delete/'.$value->id) ?>" type="button" class="btn btn-sm btn-danger btn-block" onClick="return confirm('Yakin ingin menghapus Konten ini?')">Delete</button>
+                        <button data-link="<?php echo base_url('konten/delete/'.$value->id_konten.'/'.$kategori) ?>" type="button" class="delete_data btn btn-sm btn-danger btn-block">Delete</button>
                       </td>
                     </tr>
                   <?php endforeach; ?>
