@@ -37,12 +37,12 @@
     <div class="topmenu">
       <div id="cssmenu">
         <ul class="links menu inline clearfix">
-          <li class="menu-218 first active"><a href="/id" title="" class="active">Beranda</a></li>
-          <li class="menu-1098"><a href="/id/profil" title="">Profil</a></li>
-          <li class="menu-2579"><a href="/id/berita" title="">Berita</a></li>
-          <li class="menu-517"><a href="/id/pengawasan" title="">Publikasi</a></li>
-          <li class="menu-1602"><a href="/id/putusan" title="">Pengawasan</a></li>
-          <li class="menu-915"><a href="/id/pengumuman" title="">Putusan</a></li>
+          <li class="menu-218 first active"><a href="/" title="" class="active">Beranda</a></li>
+          <li class="menu-1098"><a href="/" title="">Profil</a></li>
+          <li class="menu-2579"><a href="/berita" title="">Berita</a></li>
+          <li class="menu-517"><a href="/publikasi" title="">Publikasi</a></li>
+          <li class="menu-1602"><a href="/pengawasan" title="">Pengawasan</a></li>
+          <li class="menu-915"><a href="/putusan" title="">Putusan</a></li>
         </ul>
       </div>
     </div>
