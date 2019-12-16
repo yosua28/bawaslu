@@ -6,9 +6,9 @@
           <a href="<?php echo base_url() ?>dashboard">Dashboard</a>
         </li>
         <li class="crumb-link">
-          <a href="<?php echo base_url() ?>konten/<?php echo $kategori; ?>"><?php echo ucfirst($kategori) ?></a>
+          <a href="<?php echo base_url() ?>admin/konten/<?php echo $kategori; ?>"><?php echo $data_kategori->nama; ?></a>
         </li>
-        <li class="crumb-trail"><?php echo 'Tambah '.ucfirst($kategori) ?></li>
+        <li class="crumb-trail"><?php echo 'Tambah '.$data_kategori->nama; ?></li>
       </ol>
     </div>
   </header>
@@ -20,10 +20,10 @@
           <div class="panel panel-visible" id="spy2">
             <div class="admin-form theme-primary mw1200 center-block" style="padding-bottom: 175px;">
               <div class="panel heading-border panel-primary">
-                <form method="post"  action="<?php echo base_url() ?>add/konten/<?php echo $kategori; ?>" enctype="multipart/form-data">
+                <form method="post"  action="<?php echo base_url() ?>admin/konten/add/<?php echo $kategori; ?>" enctype="multipart/form-data">
                   <div class="panel-body bg-light">
                     <div class="section-divider mt20 mb40">
-                      <span> Tambah <?php echo ucfirst($kategori); ?> </span>
+                      <span> Tambah <?php echo $data_kategori->nama; ?> </span>
                     </div>
 
                     <div class="section row" id="spy1">

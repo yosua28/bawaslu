@@ -118,7 +118,6 @@
 
   <!-- Page Javascript -->
   <script type="text/javascript">
-    console.log("ddd");
     $(document).ready(function(){
       $(".delete_data").click(function(){
         var link = $(this).data("link");

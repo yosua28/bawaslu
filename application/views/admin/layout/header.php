@@ -2,7 +2,7 @@
 <header class="navbar navbar-fixed-top">
   <div class="navbar-branding">
     <a class="navbar-brand" href="dashboard.html">
-      <b>Bawaslu</b>ALOR
+      <b>Bawaslu</b>TTU
     </a>
     <span id="toggle_sidemenu_l" class="ad ad-lines"></span>
   </div>
@@ -19,7 +19,7 @@
             <span class="fa fa-gear"></span> Account Settings </a>
         </li>
         <li class="list-group-item">
-          <a href="<?php echo base_url('logout') ?>" class="animated animated-short fadeInUp">
+          <a href="<?php echo base_url('login/logout') ?>" class="animated animated-short fadeInUp">
             <span class="fa fa-power-off"></span> Logout </a>
         </li>
       </ul>

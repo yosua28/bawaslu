@@ -3,7 +3,7 @@
     <div class="topbar-left">
       <ol class="breadcrumb">
         <li class="crumb-active">
-          <a href="/dashboard">Dashboard</a>
+          <a href="<?php echo base_url() ?>admin/dashboard/index">Dashboard</a>
         </li>
         <li class="crumb-trail">User</li>
       </ol>
@@ -14,7 +14,7 @@
     <div class="tray tray-center">
       <div class="row">
         <div class="col-md-12">
-          <button type="button" onclick="window.location.href = '/add/user';" class="btn ladda-button btn-primary progress-button" data-style="expand-down">
+          <button type="button" onclick="window.location.href = '<?php echo base_url() ?>admin/user/add';" class="btn ladda-button btn-primary progress-button" data-style="expand-down">
             <span class="ladda-label">Tambah User</span>
             <span class="ladda-spinner"></span><span class="ladda-spinner"></span>
           </button><br/><br/>
@@ -51,8 +51,8 @@
                       <td><?php echo $value->role; ?></td>
                       <td><?php echo $value->is_active == 1 ? 'Aktif' : 'Tidak Aktif'; ?></td>
                       <td>
-                        <button onclick="window.location.href = '/update/user/<?php echo $value->id;?>';" type="button" class="btn btn-sm btn-success btn-block">Update</button>
-                        <button href="<?php echo base_url('konten/delete/'.$value->id) ?>" type="button" class="btn btn-sm btn-danger btn-block" onClick="return confirm('Yakin ingin menghapus Konten ini?')">Delete</button>
+                        <button onclick="window.location.href = '<?php echo base_url() ?>admin/user/update/<?php echo $value->id;?>';" type="button" class="btn btn-sm btn-success btn-block">Update</button>
+                        <button data-link="<?php echo base_url('admin/user/delete/'.$value->id) ?>" type="button" class="btn btn-sm btn-danger btn-block delete_data">Delete</button>
                       </td>
                     </tr>
                   <?php endforeach; ?>

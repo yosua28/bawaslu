@@ -38,11 +38,14 @@
       <div id="cssmenu">
         <ul class="links menu inline clearfix">
           <li class="menu-218 first active"><a href="/" title="" class="active">Beranda</a></li>
-          <li class="menu-1098"><a href="/" title="">Profil</a></li>
-          <li class="menu-2579"><a href="/berita" title="">Berita</a></li>
-          <li class="menu-517"><a href="/publikasi" title="">Publikasi</a></li>
-          <li class="menu-1602"><a href="/pengawasan" title="">Pengawasan</a></li>
-          <li class="menu-915"><a href="/putusan" title="">Putusan</a></li>
+          <li class="menu-1098"><a href="<?php echo base_url() ?>profil/index" title="">Profil</a></li>
+          <li class="menu-1098"><a href="<?php echo base_url() ?>berita/kategori/ppid" title="">PPID</a></li>
+          <li class="menu-517"><a href="<?php echo base_url() ?>berita/kategori/publikasi" title="">Publikasi</a></li>
+          <li class="menu-1602"><a href="<?php echo base_url() ?>berita/kategori/pengawasan" title="">Pengawasan</a></li>
+          <li class="menu-915"><a href="<?php echo base_url() ?>berita/kategori/putusan" title="">Putusan</a></li>
+          <li class="menu-915"><a href="<?php echo base_url() ?>berita/kategori/pengumuman" title="">Pengumuman</a></li>
+          <li class="menu-915"><a href="<?php echo base_url() ?>berita/kategori/seleksi-jpt-pratama" title="">Seleksi JPT Pratama</a></li>
+          <li class="menu-915"><a href="<?php echo base_url() ?>login/index" title="">Login</a></li>
         </ul>
       </div>
     </div>

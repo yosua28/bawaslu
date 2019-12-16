@@ -56,15 +56,15 @@ $route['translate_uri_dashes'] = FALSE;
 // $route['dashboard/(:num)/(:any)'] = 'admin/dashboard/index/$1/$2';
 
 //admin
-$route['dashboard'] = 'admin/dashboard/index';
-$route['user'] = 'admin/user/index';
-$route['add/user'] = 'admin/user/add';
-$route['logout'] = 'login/logout';
-$route['konten/(:any)'] = 'admin/konten/index/$1';
-$route['add/konten/(:any)'] = 'admin/konten/add/$1';
-$route['save/konten/(:any)'] = 'admin/konten/save/$1';
-$route['konten/delete/(:any)/(:any)'] = 'admin/konten/delete/$1/$2';
-$route['update/konten/(:any)/(:any)'] = 'admin/konten/update/$1/$2';
+// $route['dashboard'] = 'admin/dashboard/index';
+// $route['user'] = 'admin/user/index';
+// $route['add/user'] = 'admin/user/add';
+// $route['logout'] = 'login/logout';
+// $route['konten/(:any)'] = 'admin/konten/index/$1';
+// $route['add/konten/(:any)'] = 'admin/konten/add/$1';
+// $route['save/konten/(:any)'] = 'admin/konten/save/$1';
+// $route['konten/delete/(:any)/(:any)'] = 'admin/konten/delete/$1/$2';
+// $route['update/konten/(:any)/(:any)'] = 'admin/konten/update/$1/$2';
 
 //front
 

@@ -3,90 +3,82 @@
     <ul class="nav sidebar-menu">
       <li class="sidebar-label pt20">Profile</li>
       <li class="active">
-        <a href="/dashboard">
+        <a href="<?php echo base_url() ?>admin/dashboard/index">
           <span class="glyphicon glyphicon-home"></span>
           <span class="sidebar-title">Dashboard</span>
         </a>
       </li>
-      <?php if($this->CI->session->userdata('role') == 'superadmin') : ?>
+      <?php if(isset($this->CI->session) && 
+            $this->CI->session->userdata('role') == 'superadmin') : ?>
         <li>
-          <a href="/user">
+          <a href="<?php echo base_url() ?>admin/user/index">
             <span class="fa fa-calendar"></span>
             <span class="sidebar-title">User</span>
           </a>
         </li>
       <?php endif; ?>
       <li class="sidebar-label pt15">Konten</li>
+      <?php if(isset($this->CI->session) && 
+            $this->CI->session->userdata('role') == 'superadmin') : ?>
+        <li>
+          <a href="<?php echo base_url() ?>admin/profil/index">
+            <span class="fa fa-calendar"></span>
+            <span class="sidebar-title">Profil</span>
+          </a>
+        </li>
+      <?php endif; ?>
       <li>
-        <a href="<?php echo base_url() ?>konten/berita">
+        <a href="<?php echo base_url() ?>admin/agenda/index">
           <span class="fa fa-calendar"></span>
-          <span class="sidebar-title">Berita</span>
+          <span class="sidebar-title">Agenda</span>
         </a>
       </li>
       <li>
-        <a href="<?php echo base_url() ?>konten/kesehatan">
+        <a href="<?php echo base_url() ?>admin/konten/kategori/ppid">
           <span class="fa fa-calendar"></span>
-          <span class="sidebar-title">Kesehatan</span>
+          <span class="sidebar-title">PPID</span>
         </a>
       </li>
       <li>
-        <a href="<?php echo base_url() ?>konten/olahraga">
+        <a href="<?php echo base_url() ?>admin/konten/kategori/publikasi">
           <span class="fa fa-calendar"></span>
-          <span class="sidebar-title">Olahraga</span>
+          <span class="sidebar-title">Publikasi</span>
         </a>
       </li>
       <li>
-        <a href="<?php echo base_url() ?>konten/dokumen">
+        <a href="<?php echo base_url() ?>admin/konten/kategori/pengawasan">
           <span class="fa fa-calendar"></span>
-          <span class="sidebar-title">Dokumen</span>
+          <span class="sidebar-title">Pengawasan</span>
         </a>
       </li>
       <li>
-        <a href="pages_calendar.html">
+        <a href="<?php echo base_url() ?>admin/konten/kategori/putusan">
           <span class="fa fa-calendar"></span>
-          <span class="sidebar-title">Kegiatan</span>
+          <span class="sidebar-title">Putusan</span>
         </a>
       </li>
       <li>
-        <a href="pages_calendar.html">
+        <a href="<?php echo base_url() ?>admin/konten/kategori/pengumuman">
           <span class="fa fa-calendar"></span>
-          <span class="sidebar-title">Pendidikan</span>
+          <span class="sidebar-title">Pengumuman</span>
         </a>
       </li>
       <li>
-        <a href="pages_calendar.html">
+        <a href="<?php echo base_url() ?>admin/konten/kategori/seleksi-jpt-pratama">
           <span class="fa fa-calendar"></span>
-          <span class="sidebar-title">Teknologi</span>
+          <span class="sidebar-title">Seleksi JPT Pratama</span>
         </a>
       </li>
       <li>
-        <a href="pages_calendar.html">
+        <a href="<?php echo base_url() ?>admin/galeri/foto">
           <span class="fa fa-calendar"></span>
-          <span class="sidebar-title">Musik</span>
+          <span class="sidebar-title">Galeri Foto</span>
         </a>
       </li>
       <li>
-        <a href="pages_calendar.html">
+        <a href="<?php echo base_url() ?>admin/galeri/video">
           <span class="fa fa-calendar"></span>
-          <span class="sidebar-title">Youtube</span>
-        </a>
-      </li>
-      <li>
-        <a href="pages_calendar.html">
-          <span class="fa fa-calendar"></span>
-          <span class="sidebar-title">Media Sosial</span>
-        </a>
-      </li>
-      <li>
-        <a href="pages_calendar.html">
-          <span class="fa fa-calendar"></span>
-          <span class="sidebar-title">Otomotif</span>
-        </a>
-      </li>
-      <li>
-        <a href="pages_calendar.html">
-          <span class="fa fa-calendar"></span>
-          <span class="sidebar-title">Flora & Fauna</span>
+          <span class="sidebar-title">Galeri Video</span>
         </a>
       </li>
     </ul>

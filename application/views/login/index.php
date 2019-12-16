@@ -7,7 +7,7 @@
       <section id="content">
         <div class="admin-form theme-info" id="login1">
           <div class="panel panel-info mt10 br-n">
-            <form method="post" action="<?php echo base_url() ?>login">
+            <form method="post" action="<?php echo base_url() ?>login/index">
               <div class="panel-body bg-light p30">
                 <div class="row">
                   <div class="col-sm-7 pr30">

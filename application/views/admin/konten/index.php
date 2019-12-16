@@ -3,9 +3,9 @@
     <div class="topbar-left">
       <ol class="breadcrumb">
         <li class="crumb-active">
-          <a href="/dashboard">Dashboard</a>
+          <a href="<?php echo base_url() ?>admin/dashboard/index">Dashboard</a>
         </li>
-        <li class="crumb-trail"><?php echo ucfirst($kategori) ?></li>
+        <li class="crumb-trail"><?php echo $data_kategori->nama; ?></li>
       </ol>
     </div>
   </header>
@@ -14,14 +14,14 @@
     <div class="tray tray-center">
       <div class="row">
         <div class="col-md-12">
-          <button type="button" onclick="window.location.href = '/add/konten/<?php echo $kategori;?>/';" class="btn ladda-button btn-primary progress-button" data-style="expand-down">
-            <span class="ladda-label">Tambah <?php echo ucfirst($kategori); ?></span>
+          <button type="button" onclick="window.location.href = '<?php echo base_url() ?>admin/konten/add/<?php echo $kategori;?>/';" class="btn ladda-button btn-primary progress-button" data-style="expand-down">
+            <span class="ladda-label">Tambah <?php echo $data_kategori->nama; ?></span>
             <span class="ladda-spinner"></span><span class="ladda-spinner"></span>
           </button><br/><br/>
           <div class="panel panel-visible" id="spy2">
             <div class="panel-heading">
               <div class="panel-title hidden-xs">
-                <span class="glyphicon glyphicon-tasks"></span>List Data <?php echo ucfirst($kategori); ?>
+                <span class="glyphicon glyphicon-tasks"></span>List Data <?php echo $data_kategori->nama; ?>
               </div>
             </div>
             <div class="panel-body pn">
@@ -47,8 +47,8 @@
                       <td><?php echo $value->is_active == 1 ? 'Aktif' : 'Tidak Aktif'; ?></td>
                       <td><?php echo $value->dibaca.' kali'; ?></td>
                       <td>
-                        <button onclick="window.location.href = '/update/konten/<?php echo $kategori;?>/<?php echo $value->link;?>';" type="button" class="btn btn-sm btn-success btn-block">Update</button>
-                        <button data-link="<?php echo base_url('konten/delete/'.$value->id_konten.'/'.$kategori) ?>" type="button" class="delete_data btn btn-sm btn-danger btn-block">Delete</button>
+                        <!-- <button onclick="window.location.href = '<?php //echo base_url() ?>admin/konten/edit/<?php //echo $value->id_konten;?>';" type="button" class="btn btn-sm btn-success btn-block">Update</button> -->
+                        <button data-link="<?php echo base_url('admin/konten/delete/'.$value->id_konten.'/'.$kategori) ?>" type="button" class="delete_data btn btn-sm btn-danger btn-block">Delete</button>
                       </td>
                     </tr>
                   <?php endforeach; ?>
