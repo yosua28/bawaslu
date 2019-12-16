@@ -33,6 +33,7 @@ class Simple_login {
 			$this->CI->session->set_flashdata('sukses','Oops...silakan login dulu');
 			redirect(base_url('/login/index'));
 		}
+		return true;
 	}
 	
 	// Logout

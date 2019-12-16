@@ -104,12 +104,12 @@ class Konten extends CI_Controller {
 				}
 			}
 
-			$konten = $this->konten_model->listing($kategori);
+			// $konten = $this->konten_model->listing($kategori);
 			$data = array(
 				'data_kategori' => $is_valid,
 				'kategori' => $kategori,
 				'list_kategori' => $this->kategori_model->listing(),
-				'konten' => $konten,
+				// 'konten' => $konten,
 				'valid' => $valid,
 				'data' => $data_konten,
 				'view' => 'admin/konten/form'

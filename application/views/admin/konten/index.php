@@ -14,7 +14,7 @@
     <div class="tray tray-center">
       <div class="row">
         <div class="col-md-12">
-          <button type="button" onclick="window.location.href = '<?php echo base_url() ?>admin/konten/add/<?php echo $kategori;?>/';" class="btn ladda-button btn-primary progress-button" data-style="expand-down">
+          <button type="button" onclick="window.location.href = '<?php echo base_url() ?>admin/konten/add/<?php echo $kategori;?>';" class="btn ladda-button btn-primary progress-button" data-style="expand-down">
             <span class="ladda-label">Tambah <?php echo $data_kategori->nama; ?></span>
             <span class="ladda-spinner"></span><span class="ladda-spinner"></span>
           </button><br/><br/>

@@ -103,7 +103,7 @@
                               <div class="views-field views-field-title"> <span class="field-content"><a href="/<?php echo base_url() ?>berita/view/<?php echo $value->link; ?>"><?php echo $value->judul; ?></a></span> </div>
                               <div class="views-field views-field-name"> <span class="views-label views-label-name">Ditulis oleh : </span> <span class="field-content"><span class="username"><?php echo $value->nama; ?></span></span>
                               </div>
-                              <div class="views-field views-field-created"> <span class="views-label views-label-created">pada : </span> <span class="field-content"<?php echo date_format(date_create($value->tgl_pembuatan), "d M Y H:i"); ?></span> </div>
+                              <div class="views-field views-field-created"> <span class="views-label views-label-created">pada : </span> <span class="field-content"><?php echo date_format(date_create($value->tgl_pembuatan), "d M Y H:i"); ?></span> </div>
                               <div class="views-field views-field-totalcount"> <span class="views-label views-label-totalcount">Dilihat : </span> <span class="field-content"><?php echo $value->dibaca; ?> kali</span> </div>
                               <div class="views-field views-field-field-foto-berita">
                                 <div class="field-content"><img src="https://bawaslu.go.id/sites/default/files/styles/thumbnail_berita/public/foto_berita/IMG-20191211-WA0042.jpg?itok=NH-b4bZk" alt="" /></div>

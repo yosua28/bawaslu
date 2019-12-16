@@ -95,7 +95,7 @@
                   </div>
                   <div class="panel-footer text-right">
                     <button type="submit" class="button btn-success"> Simpan </button>
-                    <button type="reset" class="button btn-warning" onclick="window.location.href = '<?php echo base_url() ?>konten/<?php echo $kategori;?>/';"> Cancel </button>
+                    <button type="reset" class="button btn-warning" onclick="window.location.href = '<?php echo base_url() ?>admin/konten/kategori/<?php echo $kategori;?>';"> Cancel </button>
                   </div>
                 </form>
               </div>
