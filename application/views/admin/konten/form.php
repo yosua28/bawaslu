@@ -62,6 +62,10 @@
                           <?php if (!empty($valid['foto_thumbnail'])) : ?>
                             <em for="applicant_age" class="state-error"><?php echo $valid['foto_thumbnail']; ?></em>
                           <?php endif; ?>
+                          <?php if(isset($data['foto_thumbnail'])) : ?>
+                            <br/><br/>
+                            <img src="<?php echo $data['foto_thumbnail']; ?>" style="width: 400px; height: 100%;">
+                          <?php endif; ?>
                         </div>
                       </div>
                       <div class="col-md-12">
@@ -78,6 +82,11 @@
                           <?php if (!empty($valid['file_pendukung'])) : ?>
                             <em for="applicant_age" class="state-error"><?php echo $valid['file_pendukung']; ?></em>
                           <?php endif; ?>
+
+                          <?php if(isset($data['file_pendukung'])) : ?>
+                            <br/><br/>
+                            <a href="<?php echo $data['file_pendukung']; ?>" target="_blank"><?php echo $data['file_pendukung']; ?></a>
+                          <?php endif; ?>
                         </div>
                       </div>
                       <div class="col-md-12">
@@ -85,7 +94,7 @@
                           <div class="option-group field">
                             <label class="block mt15 option option-system">
                               <input <?php echo !empty($data['is_active']) ? 'checked' : ''; ?> type="checkbox" name="is_active" id="parents"  value="1">
-                              <span class="checkbox"></span> <b>Aktif</b> <label style="color: red; font-weight: bold;">(konten akan terpublik jika dicentang)</label>
+                              <span class="checkbox"></span> <b>Aktif</b> <label style="color: red; font-weight: bold;">(konten akan terpublikasi jika dicentang)</label>
                             </label>
                           </div>
                         </div>

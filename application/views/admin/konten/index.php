@@ -47,7 +47,8 @@
                       <td><?php echo $value->is_active == 1 ? 'Aktif' : 'Tidak Aktif'; ?></td>
                       <td><?php echo $value->dibaca.' kali'; ?></td>
                       <td>
-                        <!-- <button onclick="window.location.href = '<?php //echo base_url() ?>admin/konten/edit/<?php //echo $value->id_konten;?>';" type="button" class="btn btn-sm btn-success btn-block">Update</button> -->
+                        <button onclick="window.location.href = '<?php echo base_url() ?>admin/konten/edit/<?php echo $kategori;?>/<?php echo $value->id_konten;?>';" type="button" class="btn btn-sm btn-success btn-block">Update</button>
+
                         <button data-link="<?php echo base_url('admin/konten/delete/'.$value->id_konten.'/'.$kategori) ?>" type="button" class="delete_data btn btn-sm btn-danger btn-block">Delete</button>
                       </td>
                     </tr>
