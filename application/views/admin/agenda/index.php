@@ -42,7 +42,7 @@
                   <?php foreach ($list_agenda as $key => $value) : ?>
                     <tr>
                       <td><?php echo $key+1; ?></td>
-                      <td title="<?php echo $value->judul; ?>"><?php echo $value->nama_kegiatan; ?></td>
+                      <td title="<?php echo $value->nama_kegiatan; ?>"><?php echo $value->nama_kegiatan; ?></td>
                       <td title="<?php echo $value->tempat; ?>"><?php echo $value->tempat; ?></td>
                       <td title="<?php echo $value->penjelasan_kegiatan; ?>"><?php echo $value->penjelasan_kegiatan; ?></td>
                       <td><?php echo date_format(date_create($value->waktu_mulai), "d M Y H:i"); ?></td>
@@ -50,7 +50,7 @@
                       <td><?php echo $value->is_active == 1 ? 'Aktif' : 'Tidak Aktif'; ?></td>
                       <td><?php echo $value->dibaca.' kali'; ?></td>
                       <td>
-                        <!-- <button onclick="window.location.href = '<?php //echo base_url() ?>admin/konten/edit/<?php //echo $value->id_konten;?>';" type="button" class="btn btn-sm btn-success btn-block">Update</button> -->
+                        <button onclick="window.location.href = '<?php echo base_url() ?>admin/agenda/edit/<?php echo $value->id_agenda;?>';" type="button" class="btn btn-sm btn-success btn-block">Update</button>
                         <button data-link="<?php echo base_url('admin/agenda/delete/'.$value->id_agenda); ?>" type="button" class="delete_data btn btn-sm btn-danger btn-block">Delete</button>
                       </td>
                     </tr>

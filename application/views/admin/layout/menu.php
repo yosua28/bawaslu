@@ -28,6 +28,12 @@
         </li>
       <?php endif; ?>
       <li>
+        <a href="<?php echo base_url() ?>admin/konten/kategori/berita-utama">
+          <span class="fa fa-calendar"></span>
+          <span class="sidebar-title">Berita Utama</span>
+        </a>
+      </li>
+      <li>
         <a href="<?php echo base_url() ?>admin/agenda/index">
           <span class="fa fa-calendar"></span>
           <span class="sidebar-title">Agenda</span>

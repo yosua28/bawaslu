@@ -28,6 +28,7 @@
   <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/assets/admin-tools/admin-forms/css/admin-forms.css">
   <!-- Theme CSS -->
   <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/assets/skin/default_skin/css/theme.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/front/css/bootstrap-datetimepicker.css">
   <link rel="shortcut icon" href="<?php echo base_url() ?>assets/images/favicon.ico">
 
 </head>
@@ -114,8 +115,16 @@
   <script src="<?php echo base_url() ?>assets/assets/js/demo/demo.js"></script>
   <script src="<?php echo base_url() ?>assets/assets/js/main.js"></script>
   <script src="<?php echo base_url() ?>assets/vendor/plugins/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="<?php echo base_url() ?>assets/front/js/bootstrap-datetimepicker.js"></script>
 
 
+    <script type="text/javascript">
+            $(function () {
+                $('.datetimepicker1').datetimepicker({
+                  format: 'DD-MM-YYYY HH:mm'
+                });
+            });
+        </script>
   <!-- Page Javascript -->
   <script type="text/javascript">
     $(document).ready(function(){

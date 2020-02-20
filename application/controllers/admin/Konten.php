@@ -108,8 +108,9 @@ class Konten extends CI_Controller {
 			$data = array(
 				'data_kategori' => $is_valid,
 				'kategori' => $kategori,
+				'id' => "",
 				'list_kategori' => $this->kategori_model->listing(),
-				// 'konten' => $konten,
+				'action' => "Tambah",
 				'valid' => $valid,
 				'data' => $data_konten,
 				'view' => 'admin/konten/form'
@@ -175,6 +176,7 @@ class Konten extends CI_Controller {
 					}
 
 					$data_konten = array(
+						'id' => $id,
 						'id_kategori' => $is_valid->id,
 						'judul' => $post->post('judul'),
 						'isi_konten' => $post->post('isi_konten'),
@@ -192,7 +194,7 @@ class Konten extends CI_Controller {
 							move_uploaded_file( $_FILES['foto_thumbnail']['tmp_name'], $_SERVER['DOCUMENT_ROOT'].$target_foto_thumbnail);
 							$data_konten['foto_thumbnail'] = $target_foto_thumbnail;
 						}
-						$save = $this->konten_model->simpan($data_konten);
+						$save = $this->konten_model->edit($data_konten);
 						if($save) {
 							redirect(base_url().'admin/konten/kategori/'.$kategori);
 						}
@@ -203,8 +205,9 @@ class Konten extends CI_Controller {
 				$data = array(
 					'data_kategori' => $is_valid,
 					'kategori' => $kategori,
+					'id' => $id,
 					'list_kategori' => $this->kategori_model->listing(),
-					// 'konten' => $konten,
+					'action' => "Update",
 					'valid' => $valid,
 					'data' => $data_konten,
 					'view' => 'admin/konten/form'

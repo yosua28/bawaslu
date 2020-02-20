@@ -18,6 +18,7 @@
     <link type="text/css" rel="stylesheet" href="<?php echo base_url() ?>assets/front/css/css_lxQxwszdMQ5mkpXa7yydlnX-j7AGmxL2RFug2oZQjhU.css" media="all" />
     <link type="text/css" rel="stylesheet" href="<?php echo base_url() ?>assets/front/css/css_njtRtyYHB8C_1foul8htkiigQ0y1gkxgneZDMQMLiHc.css" media="all" />
     <link type="text/css" rel="stylesheet" href="<?php echo base_url() ?>assets/front/css/css_BF0KdtouVGfzFrJkPk2gWULZLmXfd_0_weKmna-CIlI.css" media="all" />
+
     <script src="<?php echo base_url() ?>assets/vendor/jquery/jquery-1.11.1.min.js"></script>
     <script src="<?php echo base_url() ?>assets/vendor/jquery/jquery_ui/jquery-ui.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url() ?>assets/front/js/js_dYOGV15VEcvR5zyP3UKzyEH3a6wcYkaWkQCEZ8Wpd8c.js"></script>

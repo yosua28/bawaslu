@@ -12,11 +12,13 @@ var $CI = NULL;
 
 	public function index()
 	{
-		$berita = $this->konten_model->listingBerita(0);
 		$pengumuman = $this->konten_model->listingBerita(1);
+		$berita = $this->konten_model->listingBerita(2);
+		$berita_utama = $this->konten_model->listingBerita(3);
 		$data = array(
 			'berita' => $berita,
 			'pengumuman' => $pengumuman,
+			'berita_utama' => $berita_utama,
 			'view' => 'home/home'
 		);
 		$this->load->view($this->config->item('front_layout'), $data); 

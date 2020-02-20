@@ -9,71 +9,38 @@
                 <div class="skin-default">
                   <div id="views_slideshow_cycle_main_slideshow-block_1" class="views_slideshow_cycle_main views_slideshow_main">
                     <div id="views_slideshow_cycle_teaser_section_slideshow-block_1" class="views-slideshow-cycle-main-frame views_slideshow_cycle_teaser_section">
-                      <div id="views_slideshow_cycle_div_slideshow-block_1_0" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-1 views-row-first views-row-odd">
-                        <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-odd views-row-first">
-                          <div class="views-field views-field-field-foto-berita">
-                            <div class="field-content"><img src="https://bawaslu.go.id/sites/default/files/styles/gambar_berita_besar/public/foto_berita/IMG-20191211-WA0026.jpg?itok=ZPsnbnuu" alt="" /></div>
-                          </div>
-                          <div class="views-field views-field-title"> <span class="field-content"><a href="#">Upaya Tingkatkan Keadilan Pemilu, Bawaslu Gelar Konferensi Internasional</a></span> </div>
-                          <div class="views-field views-field-body">
-                            <div class="field-content">
-                              <p>Bali, Badan Pengawas Pemilihan Umum – Bawaslu menyelenggarakan Konferensi Internasional Electoral Studies Program (ESP) Kedua Tahun 2019 yang berlangsung Rabu hingga Kamis (11-12 Desember 2019).</p>
+                      <?php 
+                        if(count($berita_utama) > 1) :
+                          $loop = 0;
+                          $row = 1;
+                          foreach ($berita_utama as $key_utama => $value_utama) : 
+                      ?>
+                        <div id="views_slideshow_cycle_div_slideshow-block_1_<?php echo $loop; ?>" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-<?php echo $row; ?> views-row-first views-row-odd">
+                          <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-odd <?php echo $loop == 0 ? 'views-row-first' : ''; ?>">
+                            <div class="views-field views-field-field-foto-berita">
+                              <div class="field-content">
+                                <img src="<?php echo base_url().'/'.$value_utama->foto_thumbnail; ?>" alt="" />
+                              </div>
+                            </div>
+                            <div class="views-field views-field-title"> <span class="field-content"><a href="/berita/view/<?php echo $value_utama->link; ?>"><?php echo $value_utama->judul; ?></a></span> </div>
+                            <div class="views-field views-field-body">
+                              <div class="field-content">
+                                <p>
+                                  <?php 
+                                    $str = preg_replace('/<[^>]*>/', '', $value_utama->isi_konten);
+                                    echo implode(' ', array_slice(explode(' ', $str), 0, 40)).'...';
+                                  ?>
+                                </p>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div id="views_slideshow_cycle_div_slideshow-block_1_1" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-2 views_slideshow_cycle_hidden views-row-even">
-                        <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-odd">
-                          <div class="views-field views-field-field-foto-berita">
-                            <div class="field-content"><img src="https://bawaslu.go.id/sites/default/files/styles/gambar_berita_besar/public/foto_berita/0_IMG-20191211-WA0017.jpg?itok=uU2H2cxa" alt="" /></div>
-                          </div>
-                          <div class="views-field views-field-title"> <span class="field-content"><a href="#">Abhan Minta Kode Perilaku Aparatur Pengawas Pemilu Selesai Tahun Ini</a></span> </div>
-                          <div class="views-field views-field-body">
-                            <div class="field-content">
-                              <p>Denpasar, Badan Pengawas Pemilihan Umum - Ketua Bawaslu Abhan meminta Kode Perilaku Aparatur Pengawas Pemilu bisa selesai pada akhir tahun ini. Menurutnya, mulai awal 2020 kode perilaku tersebut bisa segera diterapkan dan dipatuhi oleh jajaran Bawaslu seluruh Indonesia. </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div id="views_slideshow_cycle_div_slideshow-block_1_2" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-3 views_slideshow_cycle_hidden views-row-odd">
-                        <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-odd">
-                          <div class="views-field views-field-field-foto-berita">
-                            <div class="field-content"><img src="https://bawaslu.go.id/sites/default/files/styles/gambar_berita_besar/public/foto_berita/0_IMG-20191210-WA0039.jpg?itok=9J3eGhWV" alt="" /></div>
-                          </div>
-                          <div class="views-field views-field-title"> <span class="field-content"><a href="#">Bawaslu Minta KPU Perkuat Dasar Hukum Soal E-Rekap</a></span> </div>
-                          <div class="views-field views-field-body">
-                            <div class="field-content">
-                              <p>Jakarta, Badan Pengawas Pemilihan Umum - Ketua Bawaslu Abhan mengapresiasi upaya KPU dalam membuat digitalisasi administrasi pemilu salah satunya elektronik rekapitulasi (e-rekap). Namun dirinya meminta KPU untuk memperkuat dasar hukumnya lewat UU.</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div id="views_slideshow_cycle_div_slideshow-block_1_3" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-4 views_slideshow_cycle_hidden views-row-even">
-                        <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-odd">
-                          <div class="views-field views-field-field-foto-berita">
-                            <div class="field-content"><img src="https://bawaslu.go.id/sites/default/files/styles/gambar_berita_besar/public/foto_berita/IMG-20191209-WA0026.jpg?itok=Lv2qx_kj" alt="" /></div>
-                          </div>
-                          <div class="views-field views-field-title"> <span class="field-content"><a href="#">Abhan Harap Modul untuk Pengawas &#039;Ad hoc&quot; Mudah Dipahami</a></span> </div>
-                          <div class="views-field views-field-body">
-                            <div class="field-content">
-                              <p>Bogor, Badan Pengawas Pemilihan Umum - Ketua Bawaslu Abhan berharap, modul bimbingan teknis (bimtek) untuk pengawas Ad hoc (sementara) pada Pilkada Serentak 2020 harus singkat dan jelas.</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div id="views_slideshow_cycle_div_slideshow-block_1_4" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-5 views_slideshow_cycle_hidden views-row-last views-row-odd">
-                        <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-odd">
-                          <div class="views-field views-field-field-foto-berita">
-                            <div class="field-content"><img src="https://bawaslu.go.id/sites/default/files/styles/gambar_berita_besar/public/foto_berita/0_IMG-20191208-WA0030.jpg?itok=5aCmuA7x" alt="" /></div>
-                          </div>
-                          <div class="views-field views-field-title"> <span class="field-content"><a href="#">Abhan Harap Seluruh Daerah Punya Kampung Pengawasan Partisipatif</a></span> </div>
-                          <div class="views-field views-field-body">
-                            <div class="field-content">
-                              <p>Banjarmasin, Badan Pengawas Pemiliham Umum - Ketua Bawaslu Abhan berharap seluruh daerah di tanah air memiliki kampung pengawasan partisipatif. Menurutnya, keberadaan kampung pengawasan partisipatif bisa menyadarkan peran masyarakat mengawasi hajatan Pilkada Serentak 2020.</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                      <?php
+                          $loop++; 
+                          $row++;
+                          endforeach; 
+                        endif;
+                      ?>
                     </div>
                   </div>
                 </div>
@@ -88,8 +55,12 @@
             <div id="quicktabs-tab_halaman_depan" class="quicktabs-wrapper quicktabs-style-nostyle">
               <div class="item-list">
                 <ul class="quicktabs-tabs quicktabs-style-nostyle">
-                  <li class="active first"><a href="/id/node?qt-tab_halaman_depan=0#qt-tab_halaman_depan" id="quicktabs-tab-tab_halaman_depan-0" class="quicktabs-tab quicktabs-tab-block quicktabs-tab-block-views-delta-berita-block-1 active">Berita</a></li>
-                  <li class="last"><a href="/id/node?qt-tab_halaman_depan=1#qt-tab_halaman_depan" id="quicktabs-tab-tab_halaman_depan-1" class="quicktabs-tab quicktabs-tab-block quicktabs-tab-block-views-delta-pengumuman-block-1 active">Pengumuman</a></li>
+                  <li class="active first">
+                    <a href="/id/node?qt-tab_halaman_depan=0#qt-tab_halaman_depan" id="quicktabs-tab-tab_halaman_depan-0" class="quicktabs-tab quicktabs-tab-block quicktabs-tab-block-views-delta-berita-block-1 active">Berita</a>
+                  </li>
+                  <li class="last">
+                    <a href="/id/node?qt-tab_halaman_depan=1#qt-tab_halaman_depan" id="quicktabs-tab-tab_halaman_depan-1" class="quicktabs-tab quicktabs-tab-block quicktabs-tab-block-views-delta-pengumuman-block-1 active">Pengumuman</a>
+                  </li>
                 </ul>
               </div>
               <div id="quicktabs-container-tab_halaman_depan" class="quicktabs_main quicktabs-style-nostyle">
@@ -100,13 +71,15 @@
                         <div class="view-content">
                           <?php foreach ($berita as $key => $value) : ?>
                             <div class="views-row views-row-1 views-row-odd views-row-first">
-                              <div class="views-field views-field-title"> <span class="field-content"><a href="/<?php echo base_url() ?>berita/view/<?php echo $value->link; ?>"><?php echo $value->judul; ?></a></span> </div>
+                              <div class="views-field views-field-title"> <span class="field-content"><a href="/berita/view/<?php echo $value->link; ?>"><?php echo $value->judul; ?></a></span> </div>
                               <div class="views-field views-field-name"> <span class="views-label views-label-name">Ditulis oleh : </span> <span class="field-content"><span class="username"><?php echo $value->nama; ?></span></span>
                               </div>
                               <div class="views-field views-field-created"> <span class="views-label views-label-created">pada : </span> <span class="field-content"><?php echo date_format(date_create($value->tgl_pembuatan), "d M Y H:i"); ?></span> </div>
                               <div class="views-field views-field-totalcount"> <span class="views-label views-label-totalcount">Dilihat : </span> <span class="field-content"><?php echo $value->dibaca; ?> kali</span> </div>
                               <div class="views-field views-field-field-foto-berita">
-                                <div class="field-content"><img src="https://bawaslu.go.id/sites/default/files/styles/thumbnail_berita/public/foto_berita/IMG-20191211-WA0042.jpg?itok=NH-b4bZk" alt="" /></div>
+                                <div class="field-content">
+                                  <img style="width: 150px;" src="<?php echo base_url().'/'.$value->foto_thumbnail; ?>" alt="" />
+                                </div>
                               </div>
                               <div class="views-field views-field-body">
                                 <div class="field-content">
@@ -130,22 +103,44 @@
                         <div class="view-content">
                           <?php foreach ($pengumuman as $key => $value) : ?>
                             <div class="views-row views-row-1 views-row-odd views-row-first">
-                              <div class="views-field views-field-title"> <span class="field-content"><a href="/<?php echo base_url() ?>berita/view/<?php echo $value->link; ?>"><?php echo $value->judul; ?></a></span> </div>
-                              <div class="views-field views-field-name"> <span class="views-label views-label-name">Ditulis oleh : </span> <span class="field-content"><span class="username"><?php echo $value->nama; ?></span></span>
-                              </div>
-                              <div class="views-field views-field-created"> <span class="views-label views-label-created">pada : </span> <span class="field-content"<?php echo date_format(date_create($value->tgl_pembuatan), "d M Y H:i"); ?></span> </div>
-                              <div class="views-field views-field-totalcount"> <span class="views-label views-label-totalcount">Dilihat : </span> <span class="field-content"><?php echo $value->dibaca; ?> kali</span> </div>
-                              <div class="views-field views-field-field-foto-berita">
-                                <div class="field-content"><img src="https://bawaslu.go.id/sites/default/files/styles/thumbnail_berita/public/foto_berita/IMG-20191211-WA0042.jpg?itok=NH-b4bZk" alt="" /></div>
-                              </div>
-                              <div class="views-field views-field-body">
-                                <div class="field-content">
-                                  <?php 
-                                        $str = preg_replace('/<[^>]*>/', '', $value->isi_konten);
-                                        echo implode(' ', array_slice(explode(' ', $str), 0, 60)).'...';
-                                      ?>
+                              <div id="node-5720" class="node node-pengumuman node-teaser clearfix">
+                                <h2>
+                                  <a href="/berita/view/<?php echo $value->link; ?>">
+                                    <?php echo $value->judul; ?>                                      
+                                  </a>
+                                </h2>
+                                <div class="submitted">
+                                  Ditulis oleh <span class="username"><?php echo $value->nama; ?>
+                                  </span> pada <?php echo date_format(date_create($value->tgl_pembuatan), "d M Y H:i"); ?>    
                                 </div>
                               </div>
+                              <div class="content">
+                                <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+                                  <div class="field-items">
+                                    <div class="field-item even">
+                                      <p>
+                                        <?php 
+                                          $str = preg_replace('/<[^>]*>/', '', $value->isi_konten);
+                                          echo implode(' ', array_slice(explode(' ', $str), 0, 30)).'...';
+                                        ?>
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <?php if($value->file_pendukung != null) : ?>
+                                  <div class="field field-name-field-file-pengumuman field-type-file field-label-above">
+                                      <div class="field-label">File Pendukung:&nbsp;</div>
+                                      <div class="field-items">
+                                          <div class="field-item even">
+                                              <span class="file">
+                                                  <img class="file-icon" alt="PDF icon" title="application/pdf" src="<?php echo base_url() ?>/assets/images/pdf.png"> 
+                                                  <a href="<?php echo base_url().'/'.$value->file_pendukung; ?>" type="application/pdf;" download><?php echo $value->judul; ?></a>
+                                              </span>
+                                          </div>
+                                      </div>
+                                  </div>
+                              <?php endif; ?>
                             </div>
                           <?php endforeach; ?>
                         </div>

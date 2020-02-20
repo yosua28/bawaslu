@@ -8,7 +8,7 @@
         <li class="crumb-link">
           <a href="<?php echo base_url() ?>admin/konten/<?php echo $kategori; ?>"><?php echo $data_kategori->nama; ?></a>
         </li>
-        <li class="crumb-trail"><?php echo 'Tambah '.$data_kategori->nama; ?></li>
+        <li class="crumb-trail"><?php echo $action; ?> <?php echo $data_kategori->nama; ?></li>
       </ol>
     </div>
   </header>
@@ -20,10 +20,14 @@
           <div class="panel panel-visible" id="spy2">
             <div class="admin-form theme-primary mw1200 center-block" style="padding-bottom: 175px;">
               <div class="panel heading-border panel-primary">
-                <form method="post"  action="<?php echo base_url() ?>admin/konten/add/<?php echo $kategori; ?>" enctype="multipart/form-data">
+                <?php if ($id != "") : ?>
+                  <form method="post"  action="<?php echo base_url() ?>admin/konten/edit/<?php echo $kategori.'/'.$id; ?>" enctype="multipart/form-data">
+                <?php else : ?>
+                  <form method="post"  action="<?php echo base_url() ?>admin/konten/add/<?php echo $kategori; ?>" enctype="multipart/form-data">
+                <?php endif; ?>
                   <div class="panel-body bg-light">
                     <div class="section-divider mt20 mb40">
-                      <span> Tambah <?php echo $data_kategori->nama; ?> </span>
+                      <span><?php echo $action; ?> <?php echo $data_kategori->nama; ?></span>
                     </div>
 
                     <div class="section row" id="spy1">
@@ -38,16 +42,7 @@
                           <?php endif; ?>
                         </div>
                       </div>
-                      <div class="col-md-12">
-                        <h4>Konten</h4> 
-                        <div class="section">
-                          <label class="field state-error">
-                            <textarea id="ckeditor1" name="isi_konten" rows="12">
-                              <?php echo $data['isi_konten']; ?>
-                            </textarea>
-                          </label>
-                        </div>
-                      </div>
+
                       <div class="col-md-12">
                         <h4>Upload Thumbnail <label style="color: red; font-weight: bold;"> - (format : JPG, JPEG, PNG, Max : 2MB)</label></h4>
                         <div class="section">
@@ -68,6 +63,18 @@
                           <?php endif; ?>
                         </div>
                       </div>
+
+                      <div class="col-md-12">
+                        <h4>Konten</h4> 
+                        <div class="section">
+                          <label class="field state-error">
+                            <textarea id="ckeditor1" name="isi_konten" rows="12">
+                              <?php echo $data['isi_konten']; ?>
+                            </textarea>
+                          </label>
+                        </div>
+                      </div>
+                      
                       <div class="col-md-12">
                         <h4>File Pendukung <label style="color: red; font-weight: bold;"> - File dapat di unduh oleh publik (format : PDF, Max : 5MB)</label></h4>
                         <div class="section">

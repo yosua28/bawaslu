@@ -9,7 +9,7 @@
       <div class="region region-search">
         <div id="block-search-form" class="block block-search">
           <div class="content">
-            <form action="/" method="post" id="search-block-form" accept-charset="UTF-8">
+            <form action="<?php echo base_url() ?>berita/cari" method="post" id="search-block-form" accept-charset="UTF-8">
               <div>
                 <div class="container-inline">
                   <h2 class="element-invisible">Form pencarian</h2>
