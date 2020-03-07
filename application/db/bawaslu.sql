@@ -81,11 +81,11 @@ CREATE TABLE `kategori` (
   `updated_by` int(11) DEFAULT NULL,
   `is_delete` int(11) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 /*Data for the table `kategori` */
 
-insert  into `kategori`(`id`,`kategori`,`nama`,`is_upload`,`urutan`,`is_active`,`created_date`,`created_by`,`updated_date`,`updated_by`,`is_delete`) values (1,'ppid','PPID',1,1,1,'2019-12-07 04:32:22',1,NULL,NULL,0),(2,'publikasi','Publikasi',1,2,1,NULL,NULL,NULL,NULL,0),(3,'pengawasan','Pengawasan',1,3,1,NULL,NULL,NULL,NULL,0),(4,'putusan','Putusan',1,4,1,NULL,NULL,NULL,NULL,0),(5,'pengumuman','Pengumuman',1,5,1,NULL,NULL,NULL,NULL,0),(6,'seleksi-jpt-pratama','Seleksi JPT Pratama',1,6,1,NULL,NULL,NULL,NULL,0);
+insert  into `kategori`(`id`,`kategori`,`nama`,`is_upload`,`urutan`,`is_active`,`created_date`,`created_by`,`updated_date`,`updated_by`,`is_delete`) values (1,'ppid','PPID',1,1,1,'2019-12-07 04:32:22',1,NULL,NULL,0),(2,'publikasi','Publikasi',1,2,1,NULL,NULL,NULL,NULL,0),(3,'pengawasan','Pengawasan',1,3,1,NULL,NULL,NULL,NULL,0),(4,'putusan','Putusan',1,4,1,NULL,NULL,NULL,NULL,0),(5,'pengumuman','Pengumuman',1,5,1,NULL,NULL,NULL,NULL,0),(6,'seleksi-jpt-pratama','Seleksi JPT Pratama',1,6,1,NULL,NULL,NULL,NULL,0),(8,'berita-utama','Berita Utama',1,7,1,NULL,NULL,NULL,NULL,0);
 
 /*Table structure for table `konten` */
 
@@ -108,11 +108,9 @@ CREATE TABLE `konten` (
   `dibaca` int(11) DEFAULT '0',
   `is_timeline` int(11) DEFAULT NULL COMMENT 'muncul di slideshow baranda',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `konten` */
-
-insert  into `konten`(`id`,`id_kategori`,`judul`,`link`,`isi_konten`,`foto_thumbnail`,`file_pendukung`,`is_active`,`created_date`,`created_by`,`updated_date`,`updated_by`,`is_delete`,`dibaca`,`is_timeline`) values (3,1,'Bawaslu Dukung Penegakan Etika Penyelenggara Pemilu','1576472831-bawaslu-dukung-penegakan-etika-penyelenggara-pemilu','<p><img alt=\"\" src=\"https://bawaslu.go.id/sites/default/files/styles/gambar_berita_besar/public/foto_berita/0_IMG-20191214-WA0056.jpg?itok=H_qABUTz\" style=\"height:400px; width:669px\" /></p>\r\n\r\n<div style=\"background:transparent; border:0px; padding:0px\">\r\n<div style=\"background:transparent; border:0px; padding:0px\">Anggota Ex Officio DKPP dari Bawaslu Rahmat Bagja saat menjadi narasumber dalam diskusi bertajuk: &#39;Refleksi dan Proyeksi Penegakan Kode Etik untuk Pilkada 2020&#39; di Jakarta, Sabtu 14 Desember 2019/Foto: Andrian Habibi</div>\r\n</div>\r\n\r\n<div style=\"background:transparent; border:0px; padding:0px\">\r\n<div style=\"background:transparent; border:0px; padding:0px\">\r\n<p>Jakarta, Badan Pengawas Pemilihan Umum - Anggota Bawaslu Rahmat Bagja mengatakan, Bawaslu siap mendukung penuh penegakan etika penyelenggara pemilu. Menurutnya, Bawaslu tidak akan membela jajaran Bawaslu tingkat provinsi, kabupaten, dan kota yang mendapat hukuman dari Dewan Kehormatan Penyelenggara Pemilu (DKPP).</p>\r\n\r\n<p>&quot;Kami (Bawaslu) tidak akan membela yang melanggar etika pemilu,&quot; katanya di Jakarta, Sabtu (14/12/2019).</p>\r\n\r\n<p>Bagja yang pernah menjadi bagian dari tim program kerja (Pokja) pembentukan DKPP menerangkan, etika pemilu merupakan kewajiban setiap pengawas pemilu. Hal tersebut baginya karena setiap perbuatan memiliki pertanggungjawaban perorangan. &quot;Bagi pengawas yang melanggar etika. Itu masalah pribadinya. Ya terima saja,&quot; seru dia.</p>\r\n\r\n<p>Bagja mengatakan, memang perlu pembahasan mendalam tentang etika pemilu. Apalagi, etika dan teknis menjadi masalah. Salah satu masalah etika pemilu berawal hubungan antara penyelenggara dengan kontestan. &quot;Masalah hubungan pengawas dengan kontestan juga berpotensi menimbulkan kebijakan yang memihak,&quot; ujarnya.</p>\r\n\r\n<p>Dalam memperkuat penegakan etika pemilu, Bagja menyatakan Bawaslu siap mendukung DKPP. Dalam hal ini, Bagja meneruskan ada penguatan kapasitas jajaran anggota Bawaslu daerah. &quot;Misalnya pelatihan dan pengembangan kualitas anggota Bawaslu Provinsi, Kabupaten, dan Kota,&quot; sebutnya.</p>\r\n\r\n<p>Akan tetapi, ada saja cerita lain di balik penegakan etika pemilu. Bagja mengisahkan, ada masalah kesiapan menghadapi panggilan sidang DKPP. Padahal panggilan itu belum tentu untuk menghukum yang dipanggil tersebut.</p>\r\n\r\n<p>&quot;Kalau anggota Bawaslu Provinsi sudah biasa dipanggil DKPP. Tapi kalau anggota Bawaslu Kabupaten/Kota menerima surat panggilan DKPP, mereka sudah takut duluan. Kami bilang santai saja. Datang saja pas sidang,&quot; dia mengisahkan.</p>\r\n\r\n<p>Dalam diskusi bertajuk: &#39;Refleksi dan Proyeksi Penegakan Kode Etik untuk Pilkada 2020&#39; Bagja menuturkan perlu ada pencegahan masalah sebelum berlanjut ke sidang DKPP. &quot;Beberapa masalah laporan ke DKPP antara lain, penerjemah peraturan KPU di Kabupaten/Kota. Beda terjemahan KPU daerah dengan Bawaslu Kabupaten/Kota. Selain itu, ada masalah ego kelembagaan. Jadi memang perlu pemahaman yang sama antarpenyelenggara di tingkat daerah,&quot; terangnya.</p>\r\n\r\n<p>Fotografer: Andrian Habibi<br />\r\nEditor: Ranap HS</p>\r\n</div>\r\n</div>\r\n','/assets/uploads/foto_thumbnail/1576472831_image_2019-11-28_14-26-42.png','/assets/uploads/file_pendukung/1576472831_DT.012-Cuti Bersama Natal 2019 (1).pdf',1,'2019-12-16 12:07:11',1,NULL,NULL,0,3,NULL);
 
 /*Table structure for table `profil` */
 
@@ -154,11 +152,11 @@ CREATE TABLE `user` (
   `is_active` int(11) DEFAULT '0',
   `is_delete` int(11) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 /*Data for the table `user` */
 
-insert  into `user`(`id`,`username`,`password`,`nama`,`email`,`no_hp`,`alamat`,`role`,`created_date`,`created_by`,`updated_date`,`updated_by`,`is_active`,`is_delete`) values (1,'superadmin','$2y$10$6j7XQbwk38kLJJDIAZBYReX/FvLS0FgdcK9tmWfoC2WwrMenF1igi','Superadmin','su@gmail.com','0817676868','Solo','superadmin','2019-12-07 04:30:26',1,NULL,NULL,1,0),(6,'admin','$2y$10$wwbdVx1K8L2wPF9xEuM98.uPNxsJBR./vXJQ8XKjGcHi3gANviYGu','Admin Pemulu','bbb@mmmm.nn','123456789','rrrrrrrrrrrrrrrrr','admin','2019-12-15 20:16:38',1,'2019-12-15 23:57:03',1,1,0);
+insert  into `user`(`id`,`username`,`password`,`nama`,`email`,`no_hp`,`alamat`,`role`,`created_date`,`created_by`,`updated_date`,`updated_by`,`is_active`,`is_delete`) values (1,'superadmin','$2y$10$6j7XQbwk38kLJJDIAZBYReX/FvLS0FgdcK9tmWfoC2WwrMenF1igi','Admin','su@gmail.com','0817676868','Solo','superadmin','2019-12-07 04:30:26',1,NULL,NULL,1,0),(6,'admin','$2y$10$wwbdVx1K8L2wPF9xEuM98.uPNxsJBR./vXJQ8XKjGcHi3gANviYGu','Admin Pemulu','bbb@mmmm.nn','123456789','rrrrrrrrrrrrrrrrr','admin','2019-12-15 20:16:38',1,'2019-12-15 23:57:03',1,1,0);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
