@@ -19,13 +19,15 @@
                           <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-odd <?php echo $loop == 0 ? 'views-row-first' : ''; ?>">
                             <div class="views-field views-field-field-foto-berita">
                               <div class="field-content">
-                                <img src="<?php echo base_url().'/'.$value_utama->foto_thumbnail; ?>" alt="" />
+                                <img src="<?php echo base_url().'/'.$value_utama->foto_thumbnail; ?>" alt="" style="width: 100%;height: 380px;" />
                               </div>
                             </div>
-                            <div class="views-field views-field-title"> <span class="field-content"><a href="/berita/view/<?php echo $value_utama->link; ?>"><?php echo $value_utama->judul; ?></a></span> </div>
-                            <div class="views-field views-field-body">
-                              <div class="field-content">
-                                <p>
+                            <div class="views-field views-field-body" onclick="window.open('/berita/view/<?php echo $value_utama->link; ?>','mywindow');" style="cursor: pointer;">
+                              <div class="field-content" style="margin-top: 5px;">
+                                <strong>
+                                  <?php echo $value_utama->judul ?>
+                                </strong>
+                                <p style="margin-top: 10px; font-size: 11px;">
                                   <?php 
                                     $str = preg_replace('/<[^>]*>/', '', $value_utama->isi_konten);
                                     echo implode(' ', array_slice(explode(' ', $str), 0, 40)).'...';

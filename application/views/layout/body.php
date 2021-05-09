@@ -16,6 +16,7 @@
     <link type="text/css" rel="stylesheet" href="<?php echo base_url() ?>assets/front/css/css_xE-rWrJf-fncB6ztZfd2huxqgxu4WO-qwma6Xer30m4.css" media="all" />
     <link type="text/css" rel="stylesheet" href="<?php echo base_url() ?>assets/front/css/css_vZ_wrMQ9Og-YPPxa1q4us3N7DsZMJa-14jShHgRoRNo.css" media="all" />
     <link type="text/css" rel="stylesheet" href="<?php echo base_url() ?>assets/front/css/css_lxQxwszdMQ5mkpXa7yydlnX-j7AGmxL2RFug2oZQjhU.css" media="all" />
+    <link type="text/css" rel="stylesheet" href="<?php echo base_url() ?>assets/front/css/css_vL9e5sHahgypT-xqHeRqVwigtgVH-AYifLi5szQMlGA.css" media="all" />
     <link type="text/css" rel="stylesheet" href="<?php echo base_url() ?>assets/front/css/css_njtRtyYHB8C_1foul8htkiigQ0y1gkxgneZDMQMLiHc.css" media="all" />
     <link type="text/css" rel="stylesheet" href="<?php echo base_url() ?>assets/front/css/css_BF0KdtouVGfzFrJkPk2gWULZLmXfd_0_weKmna-CIlI.css" media="all" />
 

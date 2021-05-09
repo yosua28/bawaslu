@@ -5,7 +5,7 @@
         <li class="crumb-active">
           <a href="<?php echo base_url() ?>admin/dashboard/index">Dashboard</a>
         </li>
-        <li class="crumb-trail">Foto</li>
+        <li class="crumb-trail">Galeri</li>
       </ol>
     </div>
   </header>
@@ -13,8 +13,54 @@
   <section id="content" class="table-layout animated fadeIn">
     <div class="tray tray-center">
       <div class="row">
-  		<h1>Dalam Pengembangan...!</h1>
-        
+        <div class="col-md-12">
+          <button type="button" onclick="window.location.href = '<?php echo base_url() ?>admin/galeri/add';" class="btn ladda-button btn-primary progress-button" data-style="expand-down">
+            <span class="ladda-label">Tambah Galeri</span>
+            <span class="ladda-spinner"></span><span class="ladda-spinner"></span>
+          </button><br/><br/>
+          <div class="panel panel-visible" id="spy2">
+            <div class="panel-heading">
+              <div class="panel-title hidden-xs">
+                <span class="glyphicon glyphicon-tasks"></span>List Data Galeri
+              </div>
+            </div>
+            <div class="panel-body pn">
+              <table class="table table-striped table-hover" id="datatable2" cellspacing="0" width="100%">
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>Judul</th>
+                    <th>Keterangan</th>
+                    <th>Tanggal Pembuatan</th>
+                    <th>Status</th>
+                    <th>Dibaca</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php foreach ($konten as $key => $value) : ?>
+                    <tr>
+                      <td><?php echo $key+1; ?></td>
+                      <td title="<?php echo $value->judul; ?>"><?php echo $value->judul; ?></td>
+                      <td><?php
+                        $str = preg_replace('/<[^>]*>/', '', $value->keterangan_foto);
+                        echo implode(' ', array_slice(explode(' ', $str), 0, 20)).'...'; 
+                      ?></td>
+                      <td><?php echo date_format(date_create($value->created_date), "d M Y H:i"); ?></td>
+                      <td><?php echo $value->is_active == 1 ? 'Aktif' : 'Tidak Aktif'; ?></td>
+                      <td><?php echo $value->dibaca != null ? $value->dibaca.' kali' : '0 kali'; ?></td>
+                      <td>
+                        <button onclick="window.location.href = '<?php echo base_url() ?>admin/galeri/edit/<?php echo $value->id;?>';" type="button" class="btn btn-sm btn-success btn-block">Update</button>
+
+                        <button data-link="<?php echo base_url('admin/galeri/delete/'.$value->id) ?>" type="button" class="delete_data btn btn-sm btn-danger btn-block">Delete</button>
+                      </td>
+                    </tr>
+                  <?php endforeach; ?>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
