@@ -6,7 +6,7 @@ class Galeri extends CI_Controller {
 	var $CI = NULL;
 	public function __construct(){
 		parent::__construct();
-		$this->simple_login->cek_login();
+		// $this->simple_login->cek_login();
 		$this->CI =& get_instance();
 		$this->load->model('galeri_model');
 		$this->load->model('galerifoto_model');
@@ -50,6 +50,7 @@ class Galeri extends CI_Controller {
 			'view' => 'galeri/foto'
 		);
 
+		// var_dump($konten);exit;
 		$this->load->view($this->config->item('front_layout'), $data); 
 	}
 

@@ -18,11 +18,11 @@ class Galeri_model extends CI_Model {
 		$where = array(
 				'galeri.is_delete =' => 0
 			);
-		if($all == 0) {
-			if($this->CI->session->userdata('role') != 'superadmin') {
-				$where['galeri.created_by'] = $this->CI->session->userdata('id');
-			}
-		}
+		// if($all == 0) {
+		// 	if($this->CI->session->userdata('role') != 'superadmin') {
+		// 		$where['galeri.created_by'] = $this->CI->session->userdata('id');
+		// 	}
+		// }
 		if ($filter != "") {
 			$this->db->like('galeri.judul', $filter);
 			$this->db->or_like('galeri.keterangan_foto', $filter);

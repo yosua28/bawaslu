@@ -140,8 +140,10 @@
                       ?>
                     <?php 
                       endforeach;
-                      endif;
+                      else:
                       ?>
+                        <p>Galeri Belum Tersedia</p>
+                  <?php endif; ?>
                   </tbody>
                 </table>
               </div>
