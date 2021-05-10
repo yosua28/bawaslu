@@ -9,6 +9,7 @@ class Galeri extends CI_Controller {
 		$this->simple_login->cek_login();
 		$this->CI =& get_instance();
 		$this->load->model('galeri_model');
+		$this->load->model('video_model');
 		$this->load->model('galerifoto_model');
 	}
 
@@ -310,5 +311,163 @@ class Galeri extends CI_Controller {
 			redirect(base_url().'admin/galeri/foto');
 		}
 	}
+
+	// VIDEO =====================================================================================
+
+	public function video()
+	{
+		$konten = $this->video_model->listing();
+		$data = array(
+			'konten' => $konten,
+			'view' => 'admin/galeri/video'
+		);
+		$this->load->view($this->config->item('admin_layout'), $data); 
+	}
+
+	public function addvideo()
+	{
+		// Validasi
+		$valid = array(
+			'judul' => '',
+			'youtube' => ''
+		);
+		//Data
+		$data_konten = array(
+			'judul' => '',
+			'youtube' => '',
+			'is_active' => ''
+		);
+
+		$post = $this->input;
+		if($post->post()) {
+
+			$error = 0;
+			$foto = array();
+
+			if(empty($post->post('judul'))){
+				$error++;
+				$valid['judul'] = 'Judul tidak boleh kosong';
+			}
+
+			$youtube_id = "";
+
+			if(empty($post->post('youtube'))){
+				$error++;
+				$valid['youtube'] = 'Link Youtube tidak boleh kosong';
+			} else {
+				preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $post->post('youtube'), $match);
+				if ($match == null) {
+					$error++;
+					$valid['youtube'] = 'Link Youtube tidak valid';
+				} else {
+					$youtube_id = $match[1];
+				}
+			}
+
+			$data_konten = array(
+				'judul' => $post->post('judul'),
+				'youtube' => $post->post('youtube'),
+				'youtube_id' => $youtube_id,
+				'is_delete' => '0',
+				'is_active' => $post->post('is_active')
+			);
+
+			if($error == 0) {
+				$save_id = $this->video_model->simpan($data_konten);
+				if($save_id != null && $save_id != "") {
+					redirect(base_url().'admin/galeri/video');
+				}
+			}
+		}
+
+		$data = array(
+			'id' => "",
+			'action' => "Tambah",
+			'valid' => $valid,
+			'data' => $data_konten,
+			'view' => 'admin/galeri/video_form'
+		);
+		$this->load->view($this->config->item('admin_layout'), $data); 
+	}
+
+
+	public function deletevideo($id) {
+		$delete = $this->video_model->delete($id);
+		if($delete) {
+			redirect(base_url().'admin/galeri/video');
+		}
+	}
+
+	public function editvideo($id)
+	{
+
+		$detail = $this->video_model->detail($id);
+		if($detail != null) {
+			// Validasi
+			$valid = array(
+				'judul' => '',
+				'youtube' => ''
+			);
+			//Data
+			$data_konten = array(
+				'judul' =>  $detail->judul,
+				'youtube' =>  $detail->youtube,
+				'is_active' => $detail->is_active
+			);
+
+			$post = $this->input;
+			if($post->post()) {
+				$error = 0;
+				$foto = array();
+
+				if(empty($post->post('judul'))){
+					$error++;
+					$valid['judul'] = 'Judul tidak boleh kosong';
+				}
+
+				$youtube_id = "";
+
+				if(empty($post->post('youtube'))){
+					$error++;
+					$valid['youtube'] = 'Link Youtube tidak boleh kosong';
+				} else {
+					preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $post->post('youtube'), $match);
+					if ($match == null) {
+						$error++;
+						$valid['youtube'] = 'Link Youtube tidak valid';
+					} else {
+						$youtube_id = $match[1];
+					}
+				}
+
+				$data_konten = array(
+					'judul' => $post->post('judul'),
+					'youtube' => $post->post('youtube'),
+					'youtube_id' => $youtube_id,
+					'is_delete' => '0',
+					'is_active' => $post->post('is_active')
+				);
+
+				if($error == 0) {
+					$data_konten["id"] = $id;
+					$save_id = $this->video_model->edit($data_konten);
+					if($save_id != null && $save_id != "") {
+						redirect(base_url().'admin/galeri/video');
+					}
+				}
+			}
+
+			$data = array(
+				'id' => $id,
+				'action' => "Update",
+				'valid' => $valid,
+				'data' => $data_konten,
+				'view' => 'admin/galeri/video_form'
+			);
+			$this->load->view($this->config->item('admin_layout'), $data); 
+		}
+	}
+
+
 
 }

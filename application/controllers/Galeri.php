@@ -6,9 +6,9 @@ class Galeri extends CI_Controller {
 	var $CI = NULL;
 	public function __construct(){
 		parent::__construct();
-		// $this->simple_login->cek_login();
 		$this->CI =& get_instance();
 		$this->load->model('galeri_model');
+		$this->load->model('video_model');
 		$this->load->model('galerifoto_model');
 	}
 
@@ -50,7 +50,6 @@ class Galeri extends CI_Controller {
 			'view' => 'galeri/foto'
 		);
 
-		// var_dump($konten);exit;
 		$this->load->view($this->config->item('front_layout'), $data); 
 	}
 
@@ -76,12 +75,47 @@ class Galeri extends CI_Controller {
 		}
 	}
 
-	public function video()
+	public function video($page = "")
 	{
+		$limit = 15;
+		$pagination = 1;
+
+		if($page == "") {
+			$pagination = 1;
+		} else {
+			if(is_numeric($page)) {
+				$pagination = $page;
+			} else {
+				$pagination = 1;
+			}
+		}
+
+		$count = $this->video_model->countDataAll();
+
+		if (($limit * ($pagination-1)) > $count) {
+			$pagination = 1;
+		}
+
+		$first_page = 1;
+		$last_page = 1;
+
+		if($count > 0 ) {
+			$last_page = ceil($count / $limit);
+		}
+
+
+		$konten = $this->video_model->listing("", $limit, ($pagination-1));
 		$data = array(
+			'konten' => $konten,
+			'first_page' => $first_page,
+			'last_page' => $last_page,
+			'page' => $pagination,
 			'view' => 'galeri/video'
 		);
+
+		// var_dump($konten);exit;
 		$this->load->view($this->config->item('front_layout'), $data); 
 	}
+
 
 }
