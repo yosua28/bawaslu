@@ -93,6 +93,7 @@ class Agenda extends CI_Controller {
 				'waktu_mulai' => $post->post('waktu_mulai'),
 				'waktu_selesai' => $post->post('waktu_selesai'),
 				'is_delete' => 0,
+				'dibaca' => 0,
 				'is_active' => $post->post('is_active')
 			);
 

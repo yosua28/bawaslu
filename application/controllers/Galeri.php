@@ -113,7 +113,6 @@ class Galeri extends CI_Controller {
 			'view' => 'galeri/video'
 		);
 
-		// var_dump($konten);exit;
 		$this->load->view($this->config->item('front_layout'), $data); 
 	}
 

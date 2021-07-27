@@ -12,21 +12,33 @@ class Profil extends CI_Controller {
 
 	public function index()
 	{
+		$profil = $this->profil_model->listingWeb("profil");
+		$anggota = $this->profil_model->listingWeb("anggota");
 		$data = array(
+			'profil' => $profil,
+			'anggota' => $anggota,
 			'view' => 'profil/bawaslu'
 		);
+
 		$this->load->view($this->config->item('front_layout'), $data); 
 	}
 
-	public function kategori($kategori)
+	public function view($link)
 	{
-		$profil = $this->profil_model->detail($kategori);
-		$konten = str_replace("#BASE_URL#", base_url(), $profil->isi);
-		$data = array(
-			'konten' => $konten,
-			'profil' => $profil,
-			'view' => 'profil/detail_profile'
-		);
-		$this->load->view($this->config->item('front_layout'), $data); 
+		$detail = $this->profil_model->detailLink($link);
+		if($detail) {
+			$update = array(
+				'id' => $detail->id,
+				'dibaca' => $detail->dibaca+1,
+			);
+			$update_view = $this->profil_model->update_view($update);
+			$data = array(
+				'profil' => $detail,
+				'view' => 'profil/detail_profile'
+			);
+			$this->load->view($this->config->item('front_layout'), $data); 
+		} else {
+			redirect(base_url());
+		}
 	}
 }

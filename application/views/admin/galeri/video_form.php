@@ -6,9 +6,9 @@
           <a href="<?php echo base_url() ?>dashboard">Dashboard</a>
         </li>
         <li class="crumb-link">
-          <a href="<?php echo base_url() ?>admin/galeri/foto">Galeri</a>
+          <a href="<?php echo base_url() ?>admin/galeri/video">Galeri</a>
         </li>
-        <li class="crumb-trail"><?php echo $action; ?> Galeri</li>
+        <li class="crumb-trail"><?php echo $action; ?> Video</li>
       </ol>
     </div>
   </header>

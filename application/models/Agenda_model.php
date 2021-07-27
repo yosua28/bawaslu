@@ -32,6 +32,24 @@ class Agenda_model extends CI_Model {
 		$query = $this->db->get();
 		return $query->result();
 	}
+	
+	//Listing
+	public function listingWeb() {
+		$this->db->select('agenda.*');
+		$this->db->from('agenda');
+		// where
+		$where = array(
+				// 'agenda.waktu_selesai >=' => date('Y-m-d H:i:s'),
+				'agenda.is_delete =' => 0,
+				'agenda.is_active =' => 1
+			);
+		// where
+		$this->db->where($where);
+		//order
+		$this->db->order_by('agenda.id', 'DESC');
+		$query = $this->db->get();
+		return $query->result();
+	}
 
 	// detail perberita
 	public function detail($id){
@@ -42,7 +60,7 @@ class Agenda_model extends CI_Model {
 	public function simpan ($data) {
 		$data['created_date'] = date('Y-m-d H:i:s');
 		$data['created_by'] = $this->CI->session->userdata('id');
-		$data['link'] = $this->formatLink($data['judul']);
+		$data['link'] = $this->formatLink($data['nama_kegiatan']);
 
 		return $this->db->insert('agenda',$data);
 	}
@@ -79,6 +97,23 @@ class Agenda_model extends CI_Model {
 		$this->db->where('id', $data['id']);
 		$this->db->update('agenda', $data);
 		return true;
+	}
+
+
+
+	// detail perberita
+	public function detail_link($link){
+		$this->db->select('agenda.*');
+		$this->db->from('agenda');
+		$where = array(
+				'agenda.link =' => $link,
+				'agenda.is_delete =' => 0,
+				'agenda.is_active =' => 1,
+			);
+		// where
+		$this->db->where($where);
+		$query = $this->db->get();
+		return $query->row();
 	}
 
 	

@@ -34,6 +34,7 @@
                     <th>Keterangan Kegiatan</th>
                     <th>Mulai Kegiatan</th>
                     <th>Selesai Kegiatan</th>
+                    <th>Status</th>
                     <th>Dibaca</th>
                     <th>Action</th>
                   </tr>
